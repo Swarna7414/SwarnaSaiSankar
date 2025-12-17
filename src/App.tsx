@@ -1,17 +1,28 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "../src/Pages/Home";
-import About from "../src/Pages/About";
-import DataBase from "../src/Pages/DataBase";
 import cursorImage from "./assets/cursor.png";
 
 const App: React.FC = () => {
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    const saved = localStorage.getItem('darkMode');
+    return saved ? JSON.parse(saved) : false;
+  });
+
+  const toggleDarkMode = () => {
+    setDarkMode(prev => {
+      const newValue = !prev;
+      localStorage.setItem('darkMode', JSON.stringify(newValue));
+      return newValue;
+    });
+  };
+
   useEffect(() => {
-    
+
     document.body.style.cursor = `url(${cursorImage}), auto`;
-    
-    
+
+
     const style = document.createElement('style');
     style.id = 'custom-cursor-style';
     style.textContent = `
@@ -31,17 +42,21 @@ const App: React.FC = () => {
       input, textarea, [contenteditable="true"], [contenteditable=""] {
         cursor: text !important;
       }
+      /* Buttons should use pointer cursor */
+      button, button * {
+        cursor: pointer !important;
+      }
     `;
     document.head.appendChild(style);
 
-    
+
     const applyPointerCursor = () => {
-      
+
       const allLinks = document.querySelectorAll('a');
       allLinks.forEach(link => {
         if (link instanceof HTMLElement) {
           link.style.setProperty('cursor', 'pointer', 'important');
-          
+
           link.querySelectorAll('*').forEach(child => {
             if (child instanceof HTMLElement) {
               child.style.setProperty('cursor', 'pointer', 'important');
@@ -49,12 +64,12 @@ const App: React.FC = () => {
           });
         }
       });
-      
+
       const navLinks = document.querySelectorAll('a[href="/"], a[href="/about"], a[href*="db-console"]');
       navLinks.forEach(link => {
         if (link instanceof HTMLElement) {
           link.style.setProperty('cursor', 'pointer', 'important');
-          
+
           link.querySelectorAll('*').forEach(child => {
             if (child instanceof HTMLElement) {
               child.style.setProperty('cursor', 'pointer', 'important');
@@ -63,24 +78,19 @@ const App: React.FC = () => {
         }
       });
 
-      
+
       const allButtons = document.querySelectorAll('button');
       allButtons.forEach(btn => {
-        const text = btn.textContent?.trim();
-        
-        
-        if (text === 'Search' || text === 'RAG') {
-          btn.style.setProperty('cursor', 'pointer', 'important');
-        }
-        
-        
-        if (btn.querySelector('svg')) {
-          btn.style.setProperty('cursor', 'pointer', 'important');
-        }
+        btn.style.setProperty('cursor', 'pointer', 'important');
+        btn.querySelectorAll('*').forEach(child => {
+          if (child instanceof HTMLElement) {
+            child.style.setProperty('cursor', 'pointer', 'important');
+          }
+        });
       });
     };
 
- 
+
     applyPointerCursor();
 
 
@@ -97,7 +107,7 @@ const App: React.FC = () => {
     const timeoutId = setTimeout(applyPointerCursor, 100);
 
     return () => {
-      
+
       const styleElement = document.getElementById('custom-cursor-style');
       if (styleElement) {
         document.head.removeChild(styleElement);
@@ -109,13 +119,11 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <NavBar />
+    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-50'}`}>
+      <NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/database" element={<DataBase />} />
+          <Route path="/" element={<Home darkMode={darkMode} />} />
         </Routes>
       </main>
     </div>

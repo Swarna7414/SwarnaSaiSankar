@@ -15,6 +15,17 @@ export interface alllinks{
     links:links[]
 }
 
+export interface experience{
+    date:String;
+    role:String;
+    name:String;
+    description:String[]
+}
+
+export interface experiences{
+    experiecne:experience[];
+}
+
 export const displaylinks:links[]=[
     {
         logo: <ImLinkedin />,
