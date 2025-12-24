@@ -1,26 +1,37 @@
 import React, { useState } from 'react';
 import { MdCheckBox } from "react-icons/md";
+import { VscDebugBreakpointLog } from "react-icons/vsc";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { experience } from '../util/types';
 
 interface EducationContentProps {
     darkMode: boolean;
 }
 
 const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
-    const experiences = [
+
+    const experiences:experience[]=[
         {
-            date: "Jan 2023 - Dec 2024",
-            title: "Software Engineer",
-            company: "Tech Company A",
-            description: "Description of your experience and achievements here..."
+            date: "June 2022 - Dec 2024",
+            title: "Junior BackEnd Developer",
+            company: "Tata Consultancy Services",
+            description:["Developed microservices and APIs using Spring Boot, ensuring scalability and reliability with JUnit and Mockito for testing.",
+                "Configured Jenkins CI/CD pipelines to automate testing and integrated with Bitbucket and SonarQube for continuous code quality feedback.",
+                "Tested APIs using SoapUI, ensuring they met functionality, performance, and client specifications.",
+                "Managed release lifecycles using RLM and OpenShift, ensuring smooth and seamless deployments across different environments.",
+                "Worked with JSON and XML for data exchange and configuration management and handled incidents and deployment requests in ServiceNow for efficient operations.",
+                "Migrated code from SVN to Bitbucket, cleaned POM files, removed deprecated versions, and performed security checks for scalability. ",
+                "Upgraded code from Java 8 to Java 17 using OpenRewrite, ensuring compatibility with the latest version.",
+                "Tested APIs using Postman, validating functionality and performance."
+        ]
         },
         {
-            date: "Jun 2021 - Dec 2022",
-            title: "Junior Developer",
-            company: "Tech Company B",
-            description: "Description of your experience and achievements here..."
+            date: "Aug 2025 - May 2026",
+            title: "Graduate Research Assistant",
+            company: "University Of South Dakota",
+            description:["First Point","Second point"]
         }
-    ];
+    ]
 
     const [currentExpSlide, setCurrentExpSlide] = useState(0);
 
@@ -39,7 +50,7 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                 <h2 className={`text-2xl font-semibold mb-1 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-black'}`}>My Education</h2>
                 <div className='w-full min-h-min flex flex-col xl:flex-row items-center justify-between gap-8 px-1 py-2'>
                     {/* First box */}
-                    <div className='w-full min-h-min bg-white border-2 border-black px-3 py-1.5 rounded-md hover:bg-blue-50 hover:border-blue-600 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-blue-800 group'>
+                    <div className='w-full min-h-min bg-white border-2 border-black px-3 py-1.5 rounded-md hover:bg-blue-50 hover:border-blue-600 transition-all duration-300 cursor-pointer hover:shadow-sm hover:shadow-blue-800 group'>
                         <div className='flex flex-col gap-0.5 text-black'>
                             <div className='flex flex-row items-center'>
                                 <MdCheckBox className='text-lg mr-1 group-hover:text-green-600'/>
@@ -51,13 +62,13 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                     </div>
                     
                     {/* Second box */}
-                    <div className='w-full min-h-min bg-white border-2 border-black px-3 py-1.5 rounded-md hover:bg-blue-50 hover:border-blue-600 transition-all duration-300 cursor-pointer group'>
+                    <div className='w-full min-h-min bg-white border-2 border-black px-3 py-1.5 rounded-md hover:bg-blue-50 hover:border-blue-600 transition-all duration-300 cursor-pointer hover:shadow-sm hover:shadow-blue-800 group'>
                         <div className='flex flex-col gap-0.5 text-black'>
                             <div className='flex flex-row items-center'>
                                 <MdCheckBox className='text-lg mr-1 group-hover:text-green-600'/>
                                 <p className='italic'>Jan 2025 - May 2026</p>
                             </div>
-                            <h1 className='font-bold text-lg'>Bachelor's - Sree Vidyanikethan Engineering College</h1>
+                            <h1 className='font-bold text-lg'>Bachelor's - MohanBabu Universiry</h1>
                             <p>Mechanical Engineering - 7.9 GPA</p>
                         </div>
                     </div>
@@ -92,21 +103,26 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                                 {experiences.map((exp, index) => (
                                     <div 
                                         key={index}
-                                        className="w-full flex-shrink-0 px-6 py-5"
+                                        className="w-full flex-shrink-0 px-6 py-5 group"
                                     >
-                                        <div className={`flex flex-col gap-2 ${darkMode ? 'text-gray-200' : 'text-black'}`}>
-                                            <p className={`italic text-sm ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-                                                {exp.date}
-                                            </p>
-                                            <h3 className={`font-bold text-xl ${darkMode ? 'text-white' : 'text-black'}`}>
-                                                {exp.title}
-                                            </h3>
-                                            <p className={`font-semibold ${darkMode ? 'text-blue-400' : 'text-blue-600'}`}>
-                                                {exp.company}
-                                            </p>
-                                            <p className={`mt-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                                                {exp.description}
-                                            </p>
+                                        <div className={`flex flex-col gap-0.5 ${darkMode ? 'text-gray-200' : 'text-black'}`}>
+                                            <div className='flex flex-row gap-1 items-center'>
+                                                <MdCheckBox className='group-hover:text-green-600 text-lg'/>
+                                                <p className='italic'>{exp.date}</p>
+                                            </div>
+                                            <div className='flex flex-row text-lg gap-1 items-center font-bold'>
+                                                <h1>{exp.title}</h1>
+                                                <h1>-</h1>
+                                                <h1>{exp.company}</h1>
+                                            </div>
+                                            <div className='flex flex-col gap-1'>
+                                                {exp.description.map((item,index)=>(
+                                                    <div key={index} className='flex flex-row gap-1.5 items-start'>
+                                                        <VscDebugBreakpointLog className='mt-1 flex-shrink-0'/>
+                                                        <p>{item}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
