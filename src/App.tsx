@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
 import Home from "../src/Pages/Home";
 import cursorImage from "./assets/cursor.png";
 
@@ -120,10 +119,9 @@ const App: React.FC = () => {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-50'}`}>
-      <NavBar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main>
         <Routes>
-          <Route path="/" element={<Home darkMode={darkMode} />} />
+          <Route path="/" element={<Home darkMode={darkMode} toggleDarkMode={toggleDarkMode} />} />
         </Routes>
       </main>
     </div>
