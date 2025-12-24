@@ -7,9 +7,10 @@ import ProjectsContent from '../components/ProjectsContent';
 
 interface HomeProps {
   darkMode: boolean;
+  toggleDarkMode: () => void;
 }
 
-const Home: React.FC<HomeProps> = ({ darkMode }) => {
+const Home: React.FC<HomeProps> = ({ darkMode, toggleDarkMode }) => {
   const [activeTab, setActiveTab] = useState<string>('education');
 
   const tabs = [
@@ -19,17 +20,18 @@ const Home: React.FC<HomeProps> = ({ darkMode }) => {
   ];
 
   return (
-    <div className={`pt-36 min-h-screen transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-50'}`}>
+    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-gray-50'}`}>
       <div className="w-full px-4 md:px-8 lg:px-12 xl:px-16 py-8">
-        <div className="flex flex-col md:flex-row gap-6">
+        <div className="flex flex-col md:flex-row gap-6 items-stretch">
 
 
-          <div className={`w-full md:w-[35%] lg:w-[35%] xl:w-[35%] border-2 rounded-lg p-4 md:p-6 transition-colors duration-300 ${darkMode ? 'border-gray-800 bg-black' : 'border-gray-300 bg-white'}`}>
+          <div className={`w-full md:w-[35%] lg:w-[35%] xl:w-[35%] border-2 rounded-lg p-4 md:p-6 transition-colors duration-300 ${darkMode ? 'border-gray-800 bg-black' : 'border-gray-300 bg-white'} flex flex-col`}>
             <div>
               <img
                 src={Pic}
                 alt="Sai Image"
-                className='rounded-2xl w-full'
+                onClick={toggleDarkMode}
+                className='rounded-2xl w-full cursor-pointer hover:opacity-90 transition-opacity duration-300'
               />
               <br />
               <h1 className={`m-1 font-bold text-2xl italic text-center hover:underline hover:decoration-blue-500 hover:text-blue-800 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Sai Sankar Swarna</h1>
@@ -74,7 +76,7 @@ const Home: React.FC<HomeProps> = ({ darkMode }) => {
           </div>
 
 
-          <div className={`w-full md:w-[65%] border-2 rounded-lg p-6 max-h-[calc(100vh+5.8rem)] transition-colors duration-300 ${darkMode ? 'border-gray-800 bg-black' : 'border-gray-300 bg-white'}`}>
+          <div className={`w-full md:w-[65%] border-2 rounded-lg p-6 transition-colors duration-300 ${darkMode ? 'border-gray-800 bg-black' : 'border-gray-300 bg-white'} flex flex-col`}>
 
             {/* Tabs */}
             <div className="grid grid-cols-3 gap-2 mb-6 border-b pb-2">
@@ -97,7 +99,7 @@ const Home: React.FC<HomeProps> = ({ darkMode }) => {
             </div>
 
             {/* Tab Content */}
-            <div className={`space-y-6 leading-relaxed transition-colors duration-300 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
+            <div className={`space-y-6 leading-relaxed transition-colors duration-300 flex-1 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
 
               {activeTab === 'education' && <EducationContent darkMode={darkMode} />}
               {activeTab === 'skills' && <SkillsContent darkMode={darkMode} />}
