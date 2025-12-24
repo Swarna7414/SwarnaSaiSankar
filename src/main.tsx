@@ -6,7 +6,7 @@ import React from 'react';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter basename='/SwaRAG-FrontEnd'>
+    <BrowserRouter basename='/SwarnaSaiSankar'>
       <App/>
     </BrowserRouter>
   </React.StrictMode>
