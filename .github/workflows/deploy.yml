@@ -3,9 +3,8 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
-      - master
       - Production
+      # somecommit
   workflow_dispatch:
 
 permissions:
