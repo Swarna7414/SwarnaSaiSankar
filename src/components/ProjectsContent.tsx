@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import one from "../assets/ProjectWorks/first.png"
+import one from "../assets/ProjectWorks/First.png"
 import second from "../assets/ProjectWorks/Second.png"
 import fourth from "../assets/ProjectWorks/Fourth.png"
 import third from "../assets/ProjectWorks/Third.png"
-import fifth from "../assets/ProjectWorks/fifth.png";
+import fifth from "../assets/ProjectWorks/Fifth.png";
 import Sixth from "../assets/ProjectWorks/Sixth.png";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 
