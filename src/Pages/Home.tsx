@@ -16,7 +16,7 @@ const Home: React.FC<HomeProps> = ({ darkMode, toggleDarkMode }) => {
   const tabs = [
     { id: 'education', label: 'Education & Experience' },
     { id: 'skills', label: 'My Skills' },
-    { id: 'projects', label: 'Project Works & Publications' }
+    { id: 'projects', label: 'My Works & Publications' }
   ];
 
   return (
