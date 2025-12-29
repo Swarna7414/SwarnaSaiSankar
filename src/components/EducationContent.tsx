@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { MdCheckBox } from "react-icons/md";
-import { VscDebugBreakpointLog } from "react-icons/vsc";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { experience } from '../util/types';
+import { FaRegCalendarCheck } from "react-icons/fa6";
+import { TbRectangleFilled } from "react-icons/tb";
+import { TbPointFilled } from "react-icons/tb";
+import { Citi } from '../util/EducationTypes';
 
 interface EducationContentProps {
     darkMode: boolean;
@@ -10,37 +12,15 @@ interface EducationContentProps {
 
 const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
 
-    const experiences:experience[]=[
-        {
-            date: "June 2022 - Dec 2024",
-            title: "Junior BackEnd Developer",
-            company: "Tata Consultancy Services",
-            description:["Developed microservices and APIs using Spring Boot, ensuring scalability and reliability with JUnit and Mockito for testing.",
-                "Configured Jenkins CI/CD pipelines to automate testing and integrated with Bitbucket and SonarQube for continuous code quality feedback.",
-                "Tested APIs using SoapUI, ensuring they met functionality, performance, and client specifications.",
-                "Managed release lifecycles using RLM and OpenShift, ensuring smooth and seamless deployments across different environments.",
-                "Worked with JSON and XML for data exchange and configuration management and handled incidents and deployment requests in ServiceNow for efficient operations.",
-                "Migrated code from SVN to Bitbucket, cleaned POM files, removed deprecated versions, and performed security checks for scalability. ",
-                "Upgraded code from Java 8 to Java 17 using OpenRewrite, ensuring compatibility with the latest version.",
-                "Tested APIs using Postman, validating functionality and performance."
-        ]
-        },
-        {
-            date: "Aug 2025 - May 2026",
-            title: "Graduate Research Assistant",
-            company: "University Of South Dakota",
-            description:["First Point","Second point"]
-        }
-    ]
-
     const [currentExpSlide, setCurrentExpSlide] = useState(0);
+    const totalSlides = 3;
 
     const nextExpSlide = () => {
-        setCurrentExpSlide((prev) => (prev + 1) % experiences.length);
+        setCurrentExpSlide((prev) => (prev + 1) % totalSlides);
     };
 
     const prevExpSlide = () => {
-        setCurrentExpSlide((prev) => (prev - 1 + experiences.length) % experiences.length);
+        setCurrentExpSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
     };
 
     return (
@@ -78,7 +58,7 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
             {/* Divider */}
             <hr className={`transition-colors duration-300 ${darkMode ? 'border-gray-800' : 'border-gray-300'}`} />
 
-            {/* Experience Section */}
+            {/* Experience Section - Carousel with 3 Slides */}
             <div>
                 <h2 className={`text-2xl font-serif mb-4 transition-colors duration-300 underline underline-offset-2 ${darkMode ? 'text-white' : 'text-gray-800'}`}>My Experience</h2>
                 
@@ -100,32 +80,38 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                                 className="flex transition-transform duration-500 ease-in-out"
                                 style={{ transform: `translateX(-${currentExpSlide * 100}%)` }}
                             >
-                                {experiences.map((exp, index) => (
-                                    <div 
-                                        key={index}
-                                        className="w-full flex-shrink-0 px-6 py-5 group"
-                                    >
-                                        <div className={`flex flex-col gap-0.5 ${darkMode ? 'text-gray-200' : 'text-black'}`}>
-                                            <div className='flex flex-row gap-1 items-center'>
-                                                <MdCheckBox className='group-hover:text-green-600 text-lg'/>
-                                                <p className='italic'>{exp.date}</p>
-                                            </div>
-                                            <div className='flex flex-row text-lg gap-1 items-center font-bold'>
-                                                <h1>{exp.title}</h1>
-                                                <h1>-</h1>
-                                                <h1>{exp.company}</h1>
-                                            </div>
-                                            <div className='flex flex-col gap-1'>
-                                                {exp.description.map((item,index)=>(
-                                                    <div key={index} className='flex flex-row gap-1.5 items-start'>
-                                                        <VscDebugBreakpointLog className='mt-1 flex-shrink-0'/>
-                                                        <p>{item}</p>
+                                {/* Slide 1 */}
+                                <div className="w-full flex-shrink-0 px-6 py-5 flex flex-col items-start justify-start">
+                                    <div className='flex flex-row gap-1.5 items-center font-semibold italic'>
+                                        <FaRegCalendarCheck/>
+                                        <h1>Jul 2022 - Dec 2024</h1>
+                                    </div>
+                                    <h1 className='font-semibold text-md xl:text-xl'>Tata Consultancy Services (TCS)</h1>
+                                    <div>
+                                        <div className='xl: ml-3 flex flex-row gap-1.5 items-center font-semibold italic'>
+                                            <TbRectangleFilled/>
+                                            <h1 className='font-semibold italic'> Citi Bank (Jul 2022 - Jun 2024)</h1>
+                                        </div>
+                                        <div className='xl: ml-3'>
+                                            {Citi.map((citi,index)=>(
+                                                <div className='flex flex-row items-center xl:ml-1.5' key={index}>
+                                                    <TbPointFilled/>
+                                                    <div className='flex flex-col gap-2'>
+                                                        <p>{citi}</p>
                                                     </div>
-                                                ))}
-                                            </div>
+                                                </div>
+                                            ))}
                                         </div>
                                     </div>
-                                ))}
+                                </div>
+                                {/* Slide 2 */}
+                                <div className="w-full flex-shrink-0 px-6 py-5 flex items-center justify-center">
+                                    <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-black'}`}>Slide 2</h1>
+                                </div>
+                                {/* Slide 3 */}
+                                <div className="w-full flex-shrink-0 px-6 py-5 flex items-center justify-center">
+                                    <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-black'}`}>Slide 3</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -140,9 +126,9 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                     </button>
                 </div>
 
-                {/* Slide Indicators */}
+                {/* Slide Indicators - Shows 3 dots for 3 slides */}
                 <div className="flex justify-center gap-2 mt-4">
-                    {experiences.map((_, index) => (
+                    {[0, 1, 2].map((index) => (
                         <button
                             key={index}
                             onClick={() => setCurrentExpSlide(index)}
@@ -153,7 +139,7 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                                         ? 'bg-gray-700 border-2 border-gray-500' 
                                         : 'bg-white border-2 border-gray-400'
                             }`}
-                            aria-label={`Go to experience ${index + 1}`}
+                            aria-label={`Go to slide ${index + 1}`}
                         />
                     ))}
                 </div>
