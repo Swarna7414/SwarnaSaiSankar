@@ -37,7 +37,7 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                                 <p className='italic'>Jan 2025 - May 2026</p>
                             </div>
                             <h1 className='font-bold text-lg'>Masters - University Of South Dakota</h1>
-                            <p>Computer Science - 3.8 GPA</p>
+                            <p>Computer Science - 3.9 GPA</p>
                         </div>
                     </div>
                     
