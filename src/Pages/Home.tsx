@@ -4,6 +4,7 @@ import { displaylinks } from '../util/types';
 import EducationContent from '../components/EducationContent';
 import SkillsContent from '../components/SkillsContent';
 import ProjectsContent from '../components/ProjectsContent';
+import { FaChevronDown } from 'react-icons/fa';
 
 interface HomeProps {
   darkMode: boolean;
@@ -12,6 +13,7 @@ interface HomeProps {
 
 const Home: React.FC<HomeProps> = ({ darkMode, toggleDarkMode }) => {
   const [activeTab, setActiveTab] = useState<string>('education');
+  const [isMobileExpanded, setIsMobileExpanded] = useState<boolean>(false);
 
   const tabs = [
     { id: 'education', label: 'Education & Experience' },
@@ -35,41 +37,56 @@ const Home: React.FC<HomeProps> = ({ darkMode, toggleDarkMode }) => {
               />
               <br />
               <h1 className={`m-1 font-bold text-2xl italic text-center hover:underline hover:decoration-blue-500 hover:text-blue-800 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Sai Sankar Swarna</h1>
-              <p className={`mt-4 text-md leading-relaxed text-justify transition-colors duration-300 ${darkMode ? 'text-gray-200' : 'text-black'}`}>
-              Hello I'm Sai Sankar Swarna and I'm a Full Stack Developer with over 3.5 years of experience building web applications with React, Java, and Python. I love creating responsive interfaces using Tailwind CSS and reliable back-end systems with Spring Boot. I've worked with microservices, RESTful APIs, and real-time communication through WebSocket’s. Comfortable deploying applications on AWS (EC2, ECS, EKS), setting up CI/CD pipelines with Jenkins.
-              </p>
-              <br />
-              <hr className={`mt-0.5 transition-colors duration-300 ${darkMode ? 'border-gray-800' : 'border-gray-300'}`} />
+              
+             
+              <div className="md:hidden flex justify-center mt-2 w-full">
+                <button
+                  onClick={() => setIsMobileExpanded(!isMobileExpanded)}
+                  className={`rounded-full p-2 transition-transform duration-300 ${isMobileExpanded ? 'rotate-180' : ''} ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-200'}`}
+                  aria-label={isMobileExpanded ? 'Collapse' : 'Expand'}
+                >
+                  <FaChevronDown className={`text-lg  rounded-2xl p-1 transition-colors duration-300 ${darkMode ? 'text-black bg-white' : 'text-white dark:bg-black'}`} />
+                </button>
+              </div>
 
-              <div className="mt-4 space-y-4">
-                {displaylinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.value.startsWith('http') ? link.value : `https://${link.value}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center gap-4 p-4 transition-colors duration-200 rounded-lg cursor-pointer ${darkMode ? 'hover:bg-gray-900' : 'hover:bg-gray-100'}`}
-                  >
 
-                    <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
-                      <div className={`text-2xl hover:text-blue-400 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-black'}`}>
-                        {link.logo}
+              <div className={`md:block ${isMobileExpanded ? 'block' : 'hidden'}`}>
+                <p className={`mt-4 text-md leading-relaxed text-justify transition-colors duration-300 ${darkMode ? 'text-gray-200' : 'text-black'}`}>
+                Hello I'm Sai Sankar Swarna and I'm a Full Stack Developer with over 3.5 years of experience building web applications with React, Java, and Python. I love creating responsive interfaces using Tailwind CSS and reliable back-end systems with Spring Boot. I've worked with microservices, RESTful APIs, and real-time communication through WebSocket's. Comfortable deploying applications on AWS (EC2, ECS, EKS), setting up CI/CD pipelines with Jenkins.
+                </p>
+                <br />
+                <hr className={`mt-0.5 transition-colors duration-300 ${darkMode ? 'border-gray-800' : 'border-gray-300'}`} />
+
+                <div className="mt-4 space-y-4">
+                  {displaylinks.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.value.startsWith('http') ? link.value : `https://${link.value}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-4 p-4 transition-colors duration-200 rounded-lg cursor-pointer ${darkMode ? 'hover:bg-gray-900' : 'hover:bg-gray-100'}`}
+                    >
+
+                      <div className="w-12 h-12 flex items-center justify-center flex-shrink-0">
+                        <div className={`text-2xl hover:text-blue-400 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-black'}`}>
+                          {link.logo}
+                        </div>
                       </div>
-                    </div>
 
 
-                    <div className="flex-1 min-w-0">
+                      <div className="flex-1 min-w-0">
 
-                      <div className={`text-xs uppercase tracking-wider mb-1 transition-colors duration-300 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
-                        {link.name.toUpperCase()}
+                        <div className={`text-xs uppercase tracking-wider mb-1 transition-colors duration-300 ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
+                          {link.name.toUpperCase()}
+                        </div>
+
+                        <div className={`hover:text-blue-500 transition-colors duration-200 block truncate ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>
+                          {link.value}
+                        </div>
                       </div>
-
-                      <div className={`hover:text-blue-500 transition-colors duration-200 block truncate ${darkMode ? 'text-gray-200' : 'text-gray-800'}`}>
-                        {link.value}
-                      </div>
-                    </div>
-                  </a>
-                ))}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
