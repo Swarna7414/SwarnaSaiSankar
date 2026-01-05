@@ -188,7 +188,7 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                         />
                     ))}
                 </div>
-                <h1 className='text-red-400'>Note : I also contribute to open-source projects, you can check them out on my <span className="hover:text-blue-500 cursor-pointer" onClick={()=>{window.open("https://github.com/Swarna7414")}}>GitHub.</span></h1>
+                <h1 className='text-red-400'>Note : I also contribute to open-source projects, you can check them out on my <span className="text-blue-500 hover:text-blue-600 hover:underline underline-offset-1 cursor-pointer" onClick={()=>{window.open("https://github.com/Swarna7414")}}>GitHub.</span></h1>
             </div>
 
             {/* Divider */}
@@ -202,18 +202,18 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                 </p>
             </div>
 
-            {/* Modal Popup with Blurred Background */}
+            
             {selectedSlide !== null && (
                 <div 
                     className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-[2px] transition-opacity duration-300"
                     onClick={() => setSelectedSlide(null)}
                 >
-                    {/* Popup Window */}
+                    
                     <div 
-                        className={`relative max-w-4xl w-full mx-4 rounded-2xl p-8 shadow-2xl transition-all duration-300 ${darkMode ? 'bg-gray-900 border-2 border-gray-700' : 'bg-white border-2 border-gray-300'}`}
+                        className={`relative max-w-4xl w-full mx-4 rounded-2xl p-8 shadow-2xl transition-all duration-300 ${darkMode ? 'bg-black border-2 border-gray-700' : 'bg-white border-2 border-gray-300'}`}
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {/* Close Button */}
+                        {/* Close Button wih red colr*/}
                         <button
                             onClick={() => setSelectedSlide(null)}
                             className={`absolute top-4 right-4 text-2xl transition-colors duration-300 ${darkMode ? 'text-white hover:text-gray-400' : 'text-gray-600 hover:text-gray-800'}`}
@@ -230,7 +230,7 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                             <p className={`whitespace-pre-line leading-relaxed mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                                 {projectDescriptions[selectedSlide]}
                             </p>
-                            {/* Project Buttons */}
+                            
                             <div className="flex flex-wrap gap-4 justify-center">
                                 <a
                                     href={projectLinks[selectedSlide] !== "#" ? projectLinks[selectedSlide] : "#"}
