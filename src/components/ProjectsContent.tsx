@@ -198,7 +198,7 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
             <div>
                 <h2 className={`text-2xl font-semibold mb-4 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-800'}`}>Publications</h2>
                 <p className={`transition-colors duration-300 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
-                    Publications content goes here...
+                    I have published three papers, and I will post them here soon.
                 </p>
             </div>
 
