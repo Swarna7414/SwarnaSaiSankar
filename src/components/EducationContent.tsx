@@ -4,6 +4,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { FaRegCalendarCheck, FaComputer } from "react-icons/fa6";
 import { FaUniversity } from "react-icons/fa";
 import { TbRectangleFilled } from "react-icons/tb";
+import { VscGithubAlt } from "react-icons/vsc";
 
 interface EducationContentProps {
     darkMode: boolean;
@@ -60,12 +61,12 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                 }
             `}</style>
             <div className="space-y-8">
-            {/* Education Section */}
+            
             <div>
                 <h2 className={`text-2xl font-serif mb-4 transition-colors duration-300 underline underline-offset-2 ${darkMode ? 'text-white' : 'text-gray-800'}`}>My Education</h2>
                 <div className='w-full min-h-min flex flex-col xl:flex-row items-center justify-between gap-8 px-1 py-2'>
-                    {/* First box */}
-                    <div className={`w-full min-h-min border-2 px-3 py-1.5 rounded-md transition-all duration-300 cursor-pointer group ${darkMode ? 'bg-black border-white hover:shadow-white hover:border-gray-300' : 'bg-white border-black hover:border-black hover:shadow-black hover:shadow-sm'} hover:shadow-md`}>
+                    
+                    <div className={`w-full min-h-min border-2 border-gray-500 px-3 py-1.5 rounded-md transition-all duration-300 cursor-pointer group ${darkMode ? 'bg-black hover:shadow-gray-500 hover:border-gray-400' : 'bg-white hover:border-gray-600 hover:shadow-gray-500 hover:shadow-sm'} hover:shadow-md`}>
                         <div className={`flex flex-col gap-0.5 ${darkMode ? 'text-white' : 'text-black'}`}>
                             <div className='flex flex-row items-center'>
                                 <MdCheckBox className='text-lg mr-1 group-hover:text-green-600'/>
@@ -76,8 +77,8 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                         </div>
                     </div>
                     
-                    {/* Second box */}
-                    <div className={`w-full min-h-min border-2 px-3 py-1.5 rounded-md transition-all duration-300 cursor-pointer group ${darkMode ? 'bg-black border-white hover:shadow-white hover:border-gray-300' : 'bg-white border-black hover:shadow-sm hover:shadow-black'} hover:shadow-md`}>
+                    
+                    <div className={`w-full min-h-min border-2 border-gray-500 px-3 py-1.5 rounded-md transition-all duration-300 cursor-pointer group ${darkMode ? 'bg-black hover:shadow-gray-500 hover:border-gray-400' : 'bg-white hover:shadow-sm hover:shadow-gray-500'} hover:shadow-md`}>
                         <div className={`flex flex-col gap-0.5 ${darkMode ? 'text-white' : 'text-black'}`}>
                             <div className='flex flex-row items-center'>
                                 <MdCheckBox className='text-lg mr-1 group-hover:text-green-600'/>
@@ -93,13 +94,13 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
             
             <hr className={`transition-colors duration-300 ${darkMode ? 'border-gray-800' : 'border-gray-300'}`} />
 
-            {/* Experience Section - Carousel with 3 Slides */}
+            
             <div>
                 <h2 className={`text-2xl font-serif transition-colors duration-300 underline underline-offset-2 ${darkMode ? 'text-white' : 'text-gray-800'}`}>My Experience</h2>
                 
-                {/* Carousel Container with Side Arrows */}
+                
                 <div className="relative w-full flex items-center">
-                    {/* Left Arrow */}
+                    
                     <button
                         onClick={prevExpSlide}
                         className={`transition-colors duration-300 -mr-2 ${darkMode ? 'text-white hover:text-blue-400' : 'text-black hover:text-blue-600'}`}
@@ -130,7 +131,7 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                                             </div>
                                             <h1 className={`font-semibold italic ${darkMode ? 'text-white' : 'text-black'}`}>Citi Bank <span className={darkMode ? 'text-white' : 'text-black'}>(Jul 2022 - Jun 2024)</span></h1>
                                         </div>
-                                        <div className='slide1-scrollable xl:ml-3 space-y-3 max-h-[350px] overflow-y-auto' style={{
+                                        <div className='slide1-scrollable xl:ml-3 space-y-3 xl:max-h-[350px] xl:overflow-y-auto' style={{
                                             scrollbarWidth: 'thin',
                                             scrollbarColor: darkMode ? 'rgba(255, 255, 255, 0) transparent' : 'rgba(0, 0, 0, 0) transparent',
                                             scrollbarGutter: 'stable'
@@ -186,7 +187,7 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* Slide 2 */}
+                                
                                 <div className="w-full flex-shrink-0 px-12 py-12 min-h-[500px] flex flex-col items-start justify-start gap-4">
                                     <div className='flex flex-row gap-1.5 items-center font-semibold italic text-base xl:text-lg'>
                                         <FaRegCalendarCheck className={`text-lg xl:text-xl ${darkMode ? 'text-white' : 'text-black'}`}/>
@@ -235,7 +236,7 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                                         </div>
                                     </div>
                                 </div>
-                                {/* Slide 3 */}
+                                
                                 <div className="w-full flex-shrink-0 px-12 py-12 min-h-[500px] flex flex-col items-start justify-start gap-4">
                                     <div className='flex flex-row gap-1.5 items-center font-semibold italic text-base xl:text-lg'>
                                         <FaRegCalendarCheck className={`text-lg xl:text-xl ${darkMode ? 'text-white' : 'text-black'}`}/>
@@ -246,7 +247,7 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                                         <div className='xl:ml-3 flex flex-row gap-1.5 items-center font-semibold italic text-base xl:text-lg mb-3 group'>
                                             <div className='relative'>
                                                 <TbRectangleFilled className={`text-base xl:text-lg ${darkMode ? 'text-white' : 'text-black'} group-hover:opacity-0 transition-opacity duration-300`}/>
-                                                <FaComputer className={`absolute inset-0 text-base xl:text-lg ${darkMode ? 'text-white' : 'text-black'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}/>
+                                                <VscGithubAlt  className={`absolute inset-0 text-base xl:text-lg ${darkMode ? 'text-white' : 'text-black'} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}/>
                                             </div>
                                             <h1 className={`font-semibold italic ${darkMode ? 'text-white' : 'text-black'}`}>Open Source Projects</h1>
                                         </div>
@@ -294,7 +295,7 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                         </div>
                     </div>
 
-                    {/* Right Arrow */}
+                    
                     <button
                         onClick={nextExpSlide}
                         className={`transition-colors duration-300 -ml-2 ${darkMode ? 'text-white hover:text-blue-400' : 'text-black hover:text-blue-600'}`}

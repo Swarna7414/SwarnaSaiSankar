@@ -79,13 +79,13 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
 
     return (
         <div className="space-y-8">
-            {/* Project Works Section */}
+            
             <div>
                 <h2 className={`text-2xl font-serif mb-4 transition-colors duration-300 underline underline-offset-2 ${darkMode ? 'text-white' : 'text-gray-800'}`}>My Works</h2>
                 
-                {/* Carousel Container */}
+                
                 <div className="relative w-full flex items-center gap-4">
-                    {/* Left Arrow */}
+                    
                     <button
                         onClick={prevPage}
                         className={`transition-colors duration-300 z-10 ${darkMode ? 'text-white hover:text-blue-400' : 'text-black hover:text-blue-600'}`}
@@ -94,14 +94,14 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                         <FaChevronLeft className="text-xl" />
                     </button>
 
-                    {/* Carousel Content - Responsive: 1 slide (mobile), 2 slides (md), 3 slides (xl) */}
+                    
                     <div className="flex-1 overflow-hidden">
                         <div className="rounded-lg transition-all duration-300">
                             <div 
                                 className="flex transition-transform duration-500 ease-in-out"
                                 style={{ transform: `translateX(-${currentPage * 100}%)` }}
                             >
-                                {/* Slide 1 */}
+                                
                                 <div className="w-full md:w-1/2 xl:w-1/3 flex-shrink-0 px-4 py-6 flex items-center justify-center">
                                     <div className='flex flex-col items-center group relative'>
                                         <div className='relative rounded-2xl group-hover:rounded-xl group-hover:scale-[0.98] transition-all duration-300 overflow-hidden'>
@@ -111,7 +111,7 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                                     </div>
                                 </div>
 
-                                {/* Slide 2 */}
+                                
                                 <div className="w-full md:w-1/2 xl:w-1/3 flex-shrink-0 px-4 py-6 flex items-center justify-center">
                                 <div className='flex flex-col items-center group relative'>
                                         <div className='relative rounded-2xl group-hover:rounded-xl group-hover:scale-[0.98] transition-all duration-300 overflow-hidden'>
@@ -121,7 +121,7 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                                     </div>
                                 </div>
 
-                                {/* Slide 3 */}
+                                
                                 <div className="w-full md:w-1/2 xl:w-1/3 flex-shrink-0 px-4 py-6 flex items-center justify-center">
                                 <div className='flex flex-col items-center group relative'>
                                         <div className='relative rounded-2xl group-hover:rounded-xl group-hover:scale-[0.98] transition-all duration-300 overflow-hidden'>
@@ -130,7 +130,7 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                                         <h1 className={`mt-2 font-bold text-2xl transition-colors duration-300 ${darkMode ? 'text-white group-hover:text-blue-400' : 'text-black group-hover:text-blue-600'}`}>SwaRAG</h1>
                                     </div>
                                 </div>
-                                {/* Slide 4 */}
+                                
                                 <div className="w-full md:w-1/2 xl:w-1/3 flex-shrink-0 px-4 py-6 flex items-center justify-center">
                                     <div className='flex flex-col items-center group relative'>
                                         <div className='relative rounded-2xl group-hover:rounded-xl group-hover:scale-[0.98] transition-all duration-300 overflow-hidden'>
@@ -139,7 +139,7 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                                         <h1 className={`mt-2 font-bold text-2xl transition-colors duration-300 ${darkMode ? 'text-white group-hover:text-blue-400' : 'text-black group-hover:text-blue-600'}`}>Code Generator</h1>
                                     </div>
                                 </div>
-                                {/* Slide 5 */}
+                                
                                 <div className="w-full md:w-1/2 xl:w-1/3 flex-shrink-0 px-4 py-6 flex items-center justify-center">
                                     <div className='flex flex-col items-center group relative'>
                                         <div className='relative rounded-2xl group-hover:rounded-xl group-hover:scale-[0.98] transition-all duration-300 overflow-hidden'>
@@ -148,7 +148,7 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                                         <h1 className={`mt-2 font-bold text-2xl transition-colors duration-300 ${darkMode ? 'text-white group-hover:text-blue-400' : 'text-black group-hover:text-blue-600'}`}>Bit Coin Trading Agent</h1>
                                     </div>
                                 </div>
-                                {/* Slide 6 */}
+                                
                                 <div className="w-full md:w-1/2 xl:w-1/3 flex-shrink-0 px-4 py-6 flex items-center justify-center">
                                 <div className='flex flex-col items-center group relative'>
                                         <div className='relative rounded-2xl group-hover:rounded-xl group-hover:scale-[0.98] transition-all duration-300 overflow-hidden'>
@@ -161,7 +161,7 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                         </div>
                     </div>
 
-                    {/* Right Arrow */}
+                    
                     <button
                         onClick={nextPage}
                         className={`transition-colors duration-300 z-10 ${darkMode ? 'text-white hover:text-blue-400' : 'text-black hover:text-blue-600'}`}
@@ -171,7 +171,7 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                     </button>
                 </div>
 
-                {/* Page Indicators - Dynamic based on mobile/desktop */}
+                
                 <div className="flex justify-center gap-2 mt-4">
                     {Array.from({ length: totalPages }, (_, index) => (
                         <button
@@ -191,10 +191,10 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                 <h1 className='text-red-400'>Note : I also contribute to open-source projects, you can check them out on my <span className="text-blue-500 hover:text-blue-600 hover:underline underline-offset-1 cursor-pointer" onClick={()=>{window.open("https://github.com/Swarna7414")}}>GitHub.</span></h1>
             </div>
 
-            {/* Divider */}
+            
             <hr className={`transition-colors duration-300 ${darkMode ? 'border-gray-800' : 'border-gray-300'}`} />
 
-            {/* Publications Section */}
+            
             <div>
                 <h2 className={`text-2xl font-semibold mb-4 transition-colors duration-300 ${darkMode ? 'text-white' : 'text-gray-800'}`}>Publications</h2>
                 <p className={`transition-colors duration-300 ${darkMode ? 'text-gray-200' : 'text-gray-700'}`}>
@@ -210,10 +210,10 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                 >
                     
                     <div 
-                        className={`relative max-w-4xl w-full mx-4 rounded-2xl p-8 shadow-2xl transition-all duration-300 ${darkMode ? 'bg-black border-2 border-gray-700' : 'bg-white border-2 border-gray-300'}`}
+                        className={`relative max-w-4xl w-full mx-4 rounded-2xl p-8 shadow-2xl transition-all duration-300 border-2 border-gray-500 ${darkMode ? 'bg-black' : 'bg-white'}`}
                         onClick={(e) => e.stopPropagation()}
                     >
-                        {/* Close Button wih red colr*/}
+                        
                         <button
                             onClick={() => setSelectedSlide(null)}
                             className={`absolute top-4 right-4 text-2xl transition-colors duration-300 ${darkMode ? 'text-white hover:text-gray-400' : 'text-gray-600 hover:text-gray-800'}`}
@@ -222,7 +222,7 @@ const ProjectsContent: React.FC<ProjectsContentProps> = ({ darkMode }) => {
                             <FaTimes  className='hover:text-red-500'/>
                         </button>
 
-                        {/* Modal Content - Text Only */}
+                        
                         <div className="flex flex-col">
                             <h2 className={`text-3xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-black'}`}>
                                 {projectNames[selectedSlide]}
