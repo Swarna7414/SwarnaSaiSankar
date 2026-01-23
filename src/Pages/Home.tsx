@@ -100,7 +100,7 @@ const Home: React.FC<HomeProps> = ({ darkMode, toggleDarkMode }) => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-6 py-2 rounded-t-lg font-medium transition-all duration-300 ${activeTab === tab.id
+                  className={`text-xs sm:text-sm md:text-base px-2 sm:px-4 md:px-6 py-2 rounded-t-lg font-medium transition-all duration-300 ${activeTab === tab.id
                     ? darkMode
                       ? 'bg-white text-black'
                       : 'bg-black text-white'
