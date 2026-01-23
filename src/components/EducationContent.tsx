@@ -242,7 +242,7 @@ const EducationContent: React.FC<EducationContentProps> = ({ darkMode }) => {
                                         <FaRegCalendarCheck className={`text-lg xl:text-xl ${darkMode ? 'text-white' : 'text-black'}`}/>
                                         <h1 className={darkMode ? 'text-white' : 'text-black'}>May 2025 - present</h1>
                                     </div>
-                                    <h1 className={`font-semibold text-lg xl:text-2xl ${darkMode ? 'text-white' : 'text-black'}`}>Open Source Developer</h1>
+                                    <h1 className={`font-semibold text-lg xl:text-2xl ${darkMode ? 'text-white' : 'text-black'}`}>Open Source Contributor</h1>
                                     <div className='w-full'>
                                         <div className='xl:ml-3 flex flex-row gap-1.5 items-center font-semibold italic text-base xl:text-lg mb-3 group'>
                                             <div className='relative'>
