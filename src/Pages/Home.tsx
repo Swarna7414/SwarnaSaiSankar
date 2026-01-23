@@ -27,7 +27,7 @@ const Home: React.FC<HomeProps> = ({ darkMode, toggleDarkMode }) => {
         <div className="flex flex-col md:flex-row gap-6 items-stretch">
 
 
-          <div className={`w-full md:w-[35%] lg:w-[35%] xl:w-[35%] border-2 rounded-lg p-4 md:p-6 transition-colors duration-300 ${darkMode ? 'border-white bg-black' : 'border-black bg-white'} flex flex-col`}>
+          <div className={`w-full md:w-[35%] lg:w-[35%] xl:w-[35%] border-2 border-gray-500 rounded-lg p-4 md:p-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-white'} flex flex-col`}>
             <div>
               <img
                 src={Pic}
@@ -92,10 +92,10 @@ const Home: React.FC<HomeProps> = ({ darkMode, toggleDarkMode }) => {
           </div>
 
 
-          <div className={`w-full md:w-[65%] border-2 rounded-lg p-6 transition-colors duration-300 ${darkMode ? 'border-white bg-black' : 'border-black bg-white'} flex flex-col`}>
+          <div className={`w-full md:w-[65%] border-2 border-gray-500 rounded-lg p-6 transition-colors duration-300 ${darkMode ? 'bg-black' : 'bg-white'} flex flex-col`}>
 
             {/* Tabs */}
-            <div className="grid grid-cols-3 gap-2 mb-6 border-b pb-2">
+            <div className="grid grid-cols-3 gap-2 mb-6 border-b border-gray-500 pb-2">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
@@ -105,7 +105,7 @@ const Home: React.FC<HomeProps> = ({ darkMode, toggleDarkMode }) => {
                       ? 'bg-white text-black'
                       : 'bg-black text-white'
                     : darkMode
-                      ? 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                      ? 'bg-gray-800 text-gray-400 hover:bg-gray-700'
                       : 'bg-gray-300 text-gray-800 hover:bg-gray-400'
                     }`}
                 >
