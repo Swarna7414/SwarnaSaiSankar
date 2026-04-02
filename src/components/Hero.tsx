@@ -74,7 +74,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center px-6 pt-16"
       onClick={handleClick}
     >
-      {/* ink splatter on click */}
+      {/* ink splatter on Animaton */}
       <AnimatePresence>
         {ripples.map((ripple) => (
           <motion.div
@@ -123,7 +123,7 @@ export default function Hero() {
           className="space-y-6 flex-1"
         >
           <p className="text-blue-400 font-mono text-sm tracking-widest">
-            hi there, i'm
+            Hi there, I'm
           </p>
 
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-none">
