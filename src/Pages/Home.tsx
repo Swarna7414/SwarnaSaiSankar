@@ -1,10 +1,10 @@
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import About from '../components/About'
-import Experience from '../components/Experience'
-import Skills from '../components/Skills'
-import Projects from '../components/Projects'
-import Contact from '../components/Contact'
+import Navbar from '../Components/Navbar'
+import Hero from '../Components/Hero'
+import About from '../Components/About'
+import Experience from '../Components/Experience'
+import Skills from '../Components/Skills'
+import Projects from '../Components/Projects'
+import Contact from '../Components/Contact'
 
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
         <Contact />
       </main>
       <footer className="text-center py-8 text-zinc-600 text-xs border-t border-zinc-800/50">
-        <p>Designed & Built by Sai Sankar Swarna</p>
+        <p>Designed & Built by Sai Sankar Swarna — React + Tailwind</p>
       </footer>
     </div>
   )

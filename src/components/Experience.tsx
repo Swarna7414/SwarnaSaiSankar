@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const jobs = [
   {
     company: 'Tata Consultancy Services',
-    role: 'Software Engineer',
+    role: 'Software Engineer - Ⅰ',
     period: 'Jul 2022 – Dec 2024',
     note: 'Client: Citi Bank',
     bullets: [
