@@ -18,7 +18,7 @@ body {
   overflow-x: hidden;
 }
 
-/* spent way too long picking this scrollbar color lol */
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -36,7 +36,7 @@ body {
   background: #52525b;
 }
 
-/* blue highlight when selecting text */
+
 ::selection {
   background: rgba(59, 130, 246, 0.25);
   color: inherit;

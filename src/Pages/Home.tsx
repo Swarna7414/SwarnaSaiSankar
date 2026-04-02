@@ -20,7 +20,7 @@ export default function Home() {
         <Contact />
       </main>
       <footer className="text-center py-8 text-zinc-600 text-xs border-t border-zinc-800/50">
-        <p>Designed & Built by Sai Sankar Swarna</p>
+        <p>Designed & Built by Sai Sankar Swarna — React + Tailwind</p>
       </footer>
     </div>
   )
