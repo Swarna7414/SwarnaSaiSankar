@@ -144,22 +144,6 @@ export default function Hero() {
             I enjoy building things for the web. I’m a full stack developer with over 3 years of experience, and I graduated from the University of South Dakota.
           </p>
 
-          <div className="flex gap-4 flex-wrap">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
-            >
-              Say hello
-            </a>
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 px-5 py-2.5 border border-zinc-700 hover:border-blue-500/50 text-zinc-300 hover:text-zinc-100 text-sm rounded-lg transition-colors"
-            >
-              View projects
-            </a>
-          </div>
-
-          {/* icons : ) box */}
           <div className="flex items-center gap-5 pt-2">
             <a
               href="https://github.com/Swarna7414"
