@@ -18,10 +18,10 @@ const projects = [
     wip: false,
   },
   {
-    name: 'DentiMap',
-    desc: 'Dental mapping app built with a friend. Helps visualize dental records in a more intuitive way than traditional charts.',
-    tags: ['React', 'TypeScript', 'Tailwind', 'SpringBoot'],
-    live: 'https://debeshjha.github.io/DentiMap/',
+    name: 'DiseaseVision',
+    desc: 'A healthcare platform with multiple AI health models for different organs, making disease analysis and screening easier from one place.',
+    tags: ['React', 'TypeScript', 'Tailwind', 'Healthcare AI'],
+    live: 'https://perceptionintelligencelab.github.io/DiseaseVision',
     wip: false,
   },
   {
