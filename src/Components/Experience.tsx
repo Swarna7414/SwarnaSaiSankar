@@ -41,7 +41,7 @@ const jobs = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6 bg-zinc-900/20">
+    <section id="experience" className="py-24 px-6 bg-black">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,9 +49,9 @@ export default function Experience() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-zinc-500 text-sm font-mono tracking-widest mb-12">
-            // Experience
-          </p>
+          <h2 className="text-white text-xl md:text-2xl font-semibold tracking-tight mb-12">
+            Experience
+          </h2>
 
           <div className="space-y-5">
             {jobs.map((job, i) => (
@@ -66,7 +66,7 @@ export default function Experience() {
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 mb-4">
                   <div>
                     <h3 className="text-zinc-100 font-semibold text-base">{job.company}</h3>
-                    <p className="text-blue-400 text-sm">{job.role}</p>
+                    <p className="text-zinc-200 text-sm">{job.role}</p>
                     {job.note && (
                       <p className="text-zinc-600 text-xs mt-0.5">{job.note}</p>
                     )}
@@ -77,7 +77,7 @@ export default function Experience() {
                 <ul className="space-y-2">
                   {job.bullets.map((b, j) => (
                     <li key={j} className="flex gap-3 text-zinc-400 text-sm leading-relaxed lg:text-justify">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white mt-2 shrink-0" />
                       <span>{b}</span>
                     </li>
                   ))}
