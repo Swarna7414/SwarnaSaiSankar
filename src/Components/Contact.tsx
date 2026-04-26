@@ -27,7 +27,7 @@ export default function Contact() {
 
           <a
             href="mailto:swarnasaisankar333@gmail.com"
-            className="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors mb-12"
+            className="inline-block px-8 py-3 bg-white hover:bg-zinc-100 text-black text-sm font-medium rounded-lg transition-colors mb-12"
           >
             swarnasaisankar333@gmail.com
           </a>

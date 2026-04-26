@@ -26,9 +26,7 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          hasScrolled
-            ? 'bg-zinc-950/85 backdrop-blur-md border-b border-zinc-800/70'
-            : ''
+          hasScrolled ? 'bg-zinc-950/95' : ''
         }`}
       >
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -40,20 +38,19 @@ export default function Navbar() {
             SWARNA
           </a>
 
-          {/* desktop nav */}
+          
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm text-zinc-400 hover:text-blue-400 transition-colors duration-200"
+                className="text-sm text-zinc-400 hover:text-white transition-colors duration-200"
               >
                 {link.name}
               </a>
             ))}
           </nav>
 
-          {/* mobile hamburger */}
           <button
             className="md:hidden p-1 text-zinc-400 hover:text-zinc-100 transition-colors"
             onClick={() => setOpen(!open)}
@@ -64,11 +61,11 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* right side drawer for mobile */}
+
       <AnimatePresence>
         {open && (
           <>
-            {/* dark overlay */}
+
             <motion.div
               className="fixed inset-0 z-40 bg-black/50 md:hidden"
               initial={{ opacity: 0 }}
@@ -77,7 +74,7 @@ export default function Navbar() {
               onClick={closeMenu}
             />
 
-            {/* slide-in drawer from right */}
+
             <motion.div
               className="fixed top-0 right-0 h-full w-64 z-50 bg-zinc-900 border-l border-zinc-800 flex flex-col pt-6 pb-8 px-6 gap-6 md:hidden"
               initial={{ x: '100%' }}
@@ -85,7 +82,7 @@ export default function Navbar() {
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.25 }}
             >
-              {/* close button inside drawer */}
+
               <button
                 onClick={closeMenu}
                 className="self-end text-zinc-400 hover:text-zinc-100 transition-colors mb-4"
@@ -99,7 +96,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={closeMenu}
-                  className="text-zinc-300 hover:text-blue-400 text-base transition-colors border-b border-zinc-800 pb-4"
+                  className="text-zinc-300 hover:text-white text-base transition-colors border-b border-zinc-800 pb-4"
                 >
                   {link.name}
                 </a>

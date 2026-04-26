@@ -74,7 +74,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center px-6 pt-16"
       onClick={handleClick}
     >
-      {/* ink splatter on Animaton */}
+      {/* ink Spilting on Animaton */}
       <AnimatePresence>
         {ripples.map((ripple) => (
           <motion.div
@@ -91,7 +91,7 @@ export default function Hero() {
               const w = 6 + Math.random() * 14
               const h = 4 + Math.random() * 10
               const rotate = Math.random() * 360
-              const colors = ['#3b82f6', '#60a5fa', '#1d4ed8', '#93c5fd', '#2563eb']
+              const colors = ['#ffffff', '#fafafa', '#f4f4f5', '#e4e4e7', 'rgba(255,255,255,0.85)']
               const color = colors[Math.floor(Math.random() * colors.length)]
               return (
                 <motion.div
@@ -173,7 +173,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* profile photo */}
+        {/* profile picutre */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -184,8 +184,13 @@ export default function Hero() {
             ref={imgRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            style={{ rotateX, rotateY, transformPerspective: 800, boxShadow: '5px 5px 0px rgba(59,130,246,0.6)' }}
-            className="hidden lg:block w-72 2xl:w-[332px] rounded-xl overflow-hidden border border-blue-500 cursor-pointer shrink-0"
+            style={{ rotateX, rotateY, transformPerspective: 800, boxShadow: '0 12px 40px rgba(0,0,0,0.35)' }}
+            whileHover={{
+              boxShadow:
+                '0 0 22px rgba(255,255,255,0.35), 0 0 48px rgba(255,255,255,0.14), 0 16px 48px rgba(0,0,0,0.28)',
+            }}
+            transition={{ boxShadow: { duration: 0.26, ease: 'easeOut' } }}
+            className="hidden lg:block w-72 2xl:w-[332px] rounded-xl overflow-hidden border border-zinc-700 cursor-pointer shrink-0"
           >
             <img
               src={profilePic}
