@@ -9,10 +9,12 @@ import Contact from '../Components/Contact'
 
 export default function Home() {
   return (
-    <div className="bg-zinc-950 text-zinc-100 min-h-screen">
+    <div className="bg-black text-zinc-100 min-h-screen">
       <Navbar />
-      <main>
+      <div className="fixed inset-0 z-0">
         <Hero />
+      </div>
+      <main className="relative z-10 mt-[100svh] bg-black">
         <About />
         <Experience />
         <Skills />
