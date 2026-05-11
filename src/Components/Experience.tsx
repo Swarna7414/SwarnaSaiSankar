@@ -8,10 +8,11 @@ const jobs = [
     period: 'Jul 2022 – Dec 2024',
     note: 'Client: Citi Bank',
     bullets: [
-      'Played a key role in migrating a monolithic Tibco application to a Spring Boot microservices architecture, applying Domain-Driven Design (DDD) principles and the API Gateway pattern.',
-      'Designed and developed RESTful APIs using Spring Boot, following the Controller-Service-Repository pattern and implementing JSON-based request/response standards while integrating Spring Data JPA and Hibernate for efficient persistence and transactional workflows.',
-      'Applied Dependency Injection (DI) and Inversion of Control (IoC) principles to build loosely coupled, maintainable services while maintaining 80%+ test coverage using JUnit and Mockito.',
-      'Automated CI/CD pipelines using Jenkins, enforced code quality with SonarQube, and managed containerized deployments on OpenShift to support reliable build, test, and release workflows.',
+      'Played a key role in developing Spring Boot microservices, applying domin driven design principles and using an API Gateway pattern.',
+      'Developed RESTful APIs in Spring Boot adhering to the MVC architectural design and leveraging JSON request and response messages, coupled with Spring Data JPA and Hibernate.',
+      'Implemented dependency injection and inversion of control concepts in order to develop loosely-coupled and maintainable services, achieving more than 80% code test coverage through JUnit and Mockito.',
+      'Used Streams, Collections, multithreading, and patterns such as Singleton, Factory, and Builder pattern to improve code readability and maintainability.',
+      'Implementation of automated CI/CD pipeline using Jenkins, code analysis using SonarQube to ensure code quality and container management through OpenShift for deployment.',
       'Collaborated with frontend teams to integrate React-based UIs with backend microservices, ensuring efficient API consumption and a seamless user experience.',
     ],
   },
@@ -21,9 +22,9 @@ const jobs = [
     period: 'Jan 2025 – May 2026',
     note: '',
     bullets: [
-      'Built React-based frontend interfaces using custom hooks, React forms, and Tailwind CSS to make AI research models accessible through intuitive and responsive web applications.',
-      'Integrated Python-based model APIs and backend services into the frontend to deliver real-time outputs and visual results.',
-      'Collaborated with faculty and research teams to translate academic requirements into functional, user-friendly UI features.',
+      'Built React based front end user interfaces using custom hooks, React forms, and Tailwind CSS to enable the access of AI Health care models through web applications.',
+      'Integrated Python based model APIs and back-end systems in the front-end to ensure that real-time output and visual representations are provided.',
+      'Worked alongside faculty members and researchers to implement academic needs into useful UI components.',
     ],
   },
   {
