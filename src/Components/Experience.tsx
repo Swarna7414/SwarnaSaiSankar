@@ -3,28 +3,52 @@ import { motion } from 'framer-motion'
 
 const jobs = [
   {
-    company: 'Tata Consultancy Services',
-    role: 'Software Engineer - Ⅰ',
-    period: 'Jul 2022 – Dec 2024',
-    note: 'Client: Citi Bank',
+    company: 'Deutsche Bank',
+    role: 'Sr. Full Stack Java Developer',
+    period: 'Jan 2026 – Present',
+    note: 'Irving, TX',
     bullets: [
-      'Played a key role in developing Spring Boot microservices, applying domin driven design principles and using an API Gateway pattern.',
-      'Developed RESTful APIs in Spring Boot adhering to the MVC architectural design and leveraging JSON request and response messages, coupled with Spring Data JPA and Hibernate.',
-      'Implemented dependency injection and inversion of control concepts in order to develop loosely-coupled and maintainable services, achieving more than 80% code test coverage through JUnit and Mockito.',
-      'Used Streams, Collections, multithreading, and patterns such as Singleton, Factory, and Builder pattern to improve code readability and maintainability.',
-      'Implementation of automated CI/CD pipeline using Jenkins, code analysis using SonarQube to ensure code quality and container management through OpenShift for deployment.',
-      'Collaborated with frontend teams to integrate React-based UIs with backend microservices, ensuring efficient API consumption and a seamless user experience.',
+      'Build scalable banking applications using Java 17/21, Spring Boot, Spring Cloud, REST APIs, and microservices, with a focus on performance and reliability.',
+      'Develop responsive banking interfaces using Angular, TypeScript, RxJS, and NgRx, while working closely with backend services to create a smooth user experience.',
+      'Secure applications and transaction workflows using Spring Security, OAuth 2.0, JWT, OIDC, RBAC, and API Gateway across distributed services.',
+      'Build cloud native and event driven solutions using AWS, Docker, Kubernetes, Kafka, and RabbitMQ to support reliable and scalable systems.',
+      'Explore Generative AI and LLM integrations for document summarization, customer assistance, transaction insights, and knowledge retrieval, while supporting automated testing, CI/CD, and application monitoring.'
     ],
   },
   {
     company: 'University of South Dakota',
     role: 'Graduate Research Assistant',
-    period: 'Jan 2025 – May 2026',
-    note: '',
+    period: 'Jan 2025 – Dec 2025',
+    note: 'On Campus',
     bullets: [
-      'Built React based front end user interfaces using custom hooks, React forms, and Tailwind CSS to enable the access of AI Health care models through web applications.',
-      'Integrated Python based model APIs and back-end systems in the front-end to ensure that real-time output and visual representations are provided.',
-      'Worked alongside faculty members and researchers to implement academic needs into useful UI components.',
+    'Built 5+ AI powered web applications using React, Tailwind CSS, Spring Boot, and REST APIs, creating responsive and scalable frontend and backend components.',
+    'Integrated AI models into DiseaseVision through Spring Boot APIs for medicals image and video analysis, achieving 85% diagnostic accuracy.',
+    'Implemented secure authentication with JWT, OAuth 2.0, and OTP, along with Docker and Git-based CI/CD workflows for reliable AWS deployments.',
+   ],
+  },
+  {
+    company: 'Tata Consultancy Services',
+    role: 'Full Stack Java Developer',
+    period: 'Jul 2022 – Dec 2024',
+    note: 'India',
+    bullets: [
+      'Built scalable banking applications using Java 11/17, Spring Boot, Spring MVC, and REST APIs, supporting secure account, payment, and transaction workflows.',
+      'Developed responsive financial applications using React, TypeScript, Redux, and Bootstrap, creating reusable components and connecting them with backend services.',
+      'Designed event driven and cloud based microservices using Spring Cloud, Kafka, AWS SQS, Docker, Kubernetes, and OpenShift for reliable and scalable systems.',
+      'Secured customer and transaction data using Spring Security, OAuth 2.0, JWT, and RBAC, while working with Oracle, MongoDB, Hibernate, and JPA for data management.',
+      'Worked on testing, production support, monitoring, and troubleshooting using JUnit, Mockito, Postman, ELK, Splunk, and Datadog to improve application stability and resolve issues.'
+    ],
+  },
+  {
+    company: 'Genpact',
+    role: 'Junior Developer',
+    period: 'Jan 2021 – May 2022',
+    note: 'India',
+    bullets: [
+    'Developed healthcare applications using Java 8, Spring Boot, Spring MVC, and REST APIs, supporting business critical workflows in an Agile environment.',
+    'Built Spring Boot microservices, Spring Batch jobs, and integration workflows for healthcare data processing and asynchronous system communication.',
+    'Worked with AWS services including EC2, RDS, S3, VPC, CloudWatch, and CloudFormation to support reliable deployments and cloud infrastructure.',
+    'Improved application performance and stability through Hibernate, JPA, Oracle, SQL, and CI/CD with Jenkins and Maven, while supporting production troubleshooting and root cause analysis.'
     ],
   },
   {
@@ -33,8 +57,8 @@ const jobs = [
     period: 'May 2025 – Jan 2026',
     note: '',
     bullets: [
-      'Investigated and fixed issues by navigating large codebases, debugging Java and Spring-based components, and submitting pull requests that addressed bugs, edge cases, and minor feature gaps.',
-      'Improved code reliability by writing and updating JUnit-based unit tests, validating fixes locally, and ensuring changes did not break existing functionality before submitting PRs.',
+      'Investigated and fixed issues by navigating large codebases, debugging Java and Spring based components, and submitting pull requests that addressed bugs, edge cases, and minor feature gaps.',
+      'Improved code reliability by writing and updating JUnit based unit tests, validating fixes locally, and ensuring changes did not break existing functionality before submitting PRs.',
       'Collaborated with maintainers through GitHub pull requests, issue discussions, and code reviews, adapting to different project architectures, CI checks, and contribution workflows.',
     ],
   },

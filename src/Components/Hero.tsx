@@ -129,7 +129,7 @@ export default function Hero() {
           <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-none">
             <span className="text-zinc-100">Sai Sankar</span>
             <br />
-            <span className="text-zinc-500">Swarna</span>
+            <span className="text-blue-300">Swarna</span>
           </h1>
 
 
@@ -141,7 +141,9 @@ export default function Hero() {
           </div>
 
           <p className="text-zinc-400 max-w-md leading-relaxed text-sm md:text-base">
-            I enjoy building things for the web. I’m a full stack developer with over 3 years of experience, and I graduated from the University of South Dakota.
+            I m a Senior Java Full Stack Developer with over 5.5 years of experience building secure, 
+            scalable applications across banking, financial services, and healthcare, with a passion 
+            for solving real world problems through technology.
           </p>
 
           <div className="flex items-center gap-5 pt-2">
